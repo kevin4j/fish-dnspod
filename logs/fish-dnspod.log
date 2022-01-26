@@ -1,0 +1,1193 @@
+2022-01-25 11:12:18,141 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 14596 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:12:18,146 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:12:19,211 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 1.963 seconds (JVM running for 4.439)
+2022-01-25 11:13:02,037 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.24
+2022-01-25 11:13:02,039 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:13:02,044 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:13:03,218 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:13:03,219 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:13:03,341 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:14:00,147 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.24
+2022-01-25 11:14:00,148 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:14:00,369 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:14:00,370 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:14:00,483 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:15:00,146 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.24
+2022-01-25 11:15:00,147 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:15:00,245 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:15:00,246 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:15:00,357 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:17:55,318 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 11852 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:17:55,328 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:17:56,133 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:17:56,420 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 1.911 seconds (JVM running for 4.493)
+2022-01-25 11:18:02,939 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.24
+2022-01-25 11:18:02,941 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:18:03,371 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:18:03,371 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:18:03,472 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:19:30,588 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:19:30,589 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:19:52,151 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.lang.RuntimeException: IO操作异常
+	at com.kevin.fish.utils.HttpClientUtils.postCommon(HttpClientUtils.java:330)
+	at com.kevin.fish.utils.HttpClientUtils.postCommon(HttpClientUtils.java:284)
+	at com.kevin.fish.utils.HttpClientUtils.post(HttpClientUtils.java:274)
+	at com.kevin.fish.utils.HttpClientUtils.post(HttpClientUtils.java:270)
+	at com.kevin.fish.utils.HttpClientUtils.post(HttpClientUtils.java:266)
+	at com.kevin.fish.utils.HttpClientUtils.post(HttpClientUtils.java:262)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.getRecordList(DnsPodClient.java:77)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.getRecordBySubDomain(DnsPodClient.java:66)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:40)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)
+	at sun.security.ssl.InputRecord.read(InputRecord.java:503)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:983)
+	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:940)
+	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:221)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:165)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:140)
+	at com.kevin.fish.utils.HttpClientUtils.postCommon(HttpClientUtils.java:324)
+	... 23 common frames omitted
+2022-01-25 11:20:00,153 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:20:00,154 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:20:00,477 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:20:00,559 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+com.kevin.fish.core.exception.ServiceException: 更新记录出错：记录线路不正确
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:100)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:27:15,643 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 16860 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:27:15,651 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:27:16,565 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:27:16,887 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 2.45 seconds (JVM running for 5.772)
+2022-01-25 11:28:01,906 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:28:01,913 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:28:02,582 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:28:02,685 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+com.kevin.fish.core.exception.ServiceException: 更新记录出错：记录线路不正确
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:100)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:32:00,199 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 18580 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:32:00,206 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:32:01,128 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:32:01,425 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 2.392 seconds (JVM running for 5.173)
+2022-01-25 11:33:02,481 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:33:02,483 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:33:03,037 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:33:03,151 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = 'p'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720)
+	at java.util.Formatter.parse(Formatter.java:2560)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:101)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:33:50,324 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 19508 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:33:50,330 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:33:51,143 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:33:51,430 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 1.977 seconds (JVM running for 4.481)
+2022-01-25 11:34:01,857 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:34:01,859 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:34:02,313 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:34:02,418 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"26","message":"\u8bb0\u5f55\u7ebf\u8def\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:34:00"}}
+2022-01-25 11:34:02,421 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:102)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:35:00,152 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:35:00,153 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:35:00,252 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:35:00,331 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"26","message":"\u8bb0\u5f55\u7ebf\u8def\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:34:58"}}
+2022-01-25 11:35:00,332 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:102)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:38:04,978 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 6624 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:38:04,984 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:38:05,923 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:38:06,233 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 2.289 seconds (JVM running for 5.091)
+2022-01-25 11:39:01,926 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:39:01,928 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:39:02,383 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:39:02,568 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","record_line_id":"0","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"34","message":"\u8bb0\u5f55\u7684\u503c\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:39:00"}}
+2022-01-25 11:39:02,572 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:103)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:40:00,156 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:40:00,156 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:40:00,250 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:40:00,350 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","record_line_id":"0","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"34","message":"\u8bb0\u5f55\u7684\u503c\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:39:58"}}
+2022-01-25 11:40:00,351 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:103)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:41:00,148 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:41:00,149 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:41:00,301 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:41:00,462 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","record_line_id":"0","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"34","message":"\u8bb0\u5f55\u7684\u503c\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:40:58"}}
+2022-01-25 11:41:00,463 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:103)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:42:00,150 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:42:00,151 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:42:00,325 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:42:00,496 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","record_line_id":"0","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"34","message":"\u8bb0\u5f55\u7684\u503c\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:41:58"}}
+2022-01-25 11:42:00,497 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:103)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:43:00,149 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:43:00,150 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:43:00,352 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:43:00,454 ERROR [com.kevin.fish.dns.dnspod.DnsPodClient] - url: https://dnsapi.cn/Record.Modify, params:{"record_id":"351810237","record_line":"默认","record_line_id":"0","domain":"esayyes.com","format":"json","sub_domain":"work","login_token":"63677,dfc205971532a6b669f4982690913197","mx":"0","value":"IP:117.63.122.185","record_type":"A"}, response: {"status":{"code":"34","message":"\u8bb0\u5f55\u7684\u503c\u4e0d\u6b63\u786e","created_at":"2022-01-25 11:42:58"}}
+2022-01-25 11:43:00,456 ERROR [org.springframework.scheduling.support.TaskUtils$LoggingErrorHandler] - Unexpected error occurred in scheduled task
+java.util.UnknownFormatConversionException: Conversion = '%'
+	at java.util.Formatter.checkText(Formatter.java:2579)
+	at java.util.Formatter.parse(Formatter.java:2565)
+	at java.util.Formatter.format(Formatter.java:2501)
+	at java.util.Formatter.format(Formatter.java:2455)
+	at java.lang.String.format(String.java:2940)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.modifyRecord(DnsPodClient.java:103)
+	at com.kevin.fish.dns.dnspod.DnsPodClient.refreshDns(DnsPodClient.java:48)
+	at com.kevin.fish.job.DnsRefreshJob.refreshIp(DnsRefreshJob.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-01-25 11:44:34,147 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 17424 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:44:34,154 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:44:35,018 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:44:35,367 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 2.071 seconds (JVM running for 4.831)
+2022-01-25 11:45:01,955 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:45:01,956 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:45:02,389 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain work, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:45:02,598 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:45:02,795 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - update sub-domain kevin, old IP ( 117.63.122.24 ), current IP ( 117.63.122.185 )
+2022-01-25 11:46:00,146 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:46:00,147 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:46:00,873 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:46:00,874 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:46:01,003 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:47:00,146 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:47:00,147 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:47:00,246 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:47:00,247 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:47:00,423 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:48:00,149 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:48:00,150 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:48:00,314 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:48:00,315 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:48:00,481 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:48:39,687 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 7280 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:48:39,694 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:48:41,144 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:48:41,615 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 2.941 seconds (JVM running for 5.385)
+2022-01-25 11:49:02,068 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:49:02,070 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:49:02,613 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:49:02,614 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:49:02,720 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:50:00,149 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:50:00,150 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:50:00,491 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:50:00,491 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:50:00,664 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:51:00,145 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:51:00,145 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:51:00,242 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:51:00,242 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:51:00,417 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:52:00,298 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:52:00,298 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:52:00,499 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:52:00,500 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:52:00,616 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:53:00,224 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:53:00,225 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:53:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:53:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:53:00,522 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:54:00,144 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:54:00,144 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:54:00,324 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:54:00,325 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:54:00,423 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:55:00,149 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:55:00,150 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:55:00,288 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:55:00,288 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:55:00,476 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:56:00,148 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:56:00,148 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:56:00,322 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:56:00,322 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:56:00,526 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:57:00,195 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:57:00,195 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:57:00,391 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:57:00,391 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:57:00,508 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:58:00,156 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 11:58:00,157 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 11:58:00,255 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 11:58:00,256 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 11:58:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 11:59:17,122 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 13868 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 11:59:17,127 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 11:59:19,226 INFO [org.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8101"]
+2022-01-25 11:59:19,227 INFO [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2022-01-25 11:59:19,227 INFO [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 11:59:19,370 INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2022-01-25 11:59:19,703 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 11:59:20,525 INFO [org.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8101"]
+2022-01-25 11:59:20,585 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 4.557 seconds (JVM running for 7.253)
+2022-01-25 11:59:25,508 INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 12:00:02,207 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:00:02,210 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:00:02,538 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:00:02,538 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:00:02,657 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:01:00,227 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:01:00,227 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:01:00,400 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:01:00,400 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:01:00,488 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:01:27,474 INFO [com.kevin.fish.FishDnspodApplication] - Starting FishDnspodApplication using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 19924 (D:\idea_workspace\fish-dnspod\target\classes started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 12:01:27,478 INFO [com.kevin.fish.FishDnspodApplication] - No active profile set, falling back to default profiles: default
+2022-01-25 12:01:29,007 INFO [org.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8101"]
+2022-01-25 12:01:29,008 INFO [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2022-01-25 12:01:29,008 INFO [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-01-25 12:01:29,137 INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2022-01-25 12:01:29,208 INFO [com.kevin.fish.utils.PropertyUtils] - 配置文件[application.properties],装载成功~
+2022-01-25 12:01:29,637 INFO [org.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8101"]
+2022-01-25 12:01:29,683 INFO [com.kevin.fish.FishDnspodApplication] - Started FishDnspodApplication in 3.119 seconds (JVM running for 5.793)
+2022-01-25 12:01:40,600 INFO [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-01-25 12:02:03,013 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:02:03,014 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:02:03,327 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:02:03,327 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:02:03,454 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:03:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:03:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:03:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:03:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:03:00,356 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:04:00,585 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:04:00,586 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:04:00,701 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:04:00,701 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:04:00,793 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:05:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:05:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:05:00,336 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:05:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:05:00,433 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:06:00,568 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:06:00,569 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:06:00,662 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:06:00,662 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:06:00,830 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:07:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:07:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:07:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:07:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:07:00,431 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:08:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:08:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:08:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:08:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:08:00,515 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:09:00,967 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:09:00,968 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:09:01,133 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:09:01,133 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:09:01,298 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:10:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:10:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:10:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:10:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:10:00,426 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:11:00,170 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:11:00,171 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:11:00,310 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:11:00,310 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:11:00,405 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:11:58,265 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:11:58,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:11:58,445 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:11:58,446 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:11:58,540 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:13:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:13:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:13:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:13:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:13:00,511 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:14:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:14:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:14:00,333 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:14:00,333 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:14:00,429 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:15:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:15:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:15:00,279 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:15:00,279 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:15:00,447 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:16:00,168 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:16:00,168 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:16:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:16:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:16:00,445 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:17:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:17:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:17:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:17:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:17:00,423 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:18:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:18:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:18:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:18:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:18:00,446 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:19:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:19:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:19:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:19:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:19:00,513 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:20:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:20:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:20:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:20:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:20:00,433 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:21:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:21:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:21:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:21:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:21:00,366 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:22:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:22:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:22:00,329 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:22:00,330 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:22:00,417 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:23:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:23:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:23:00,349 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:23:00,349 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:23:00,527 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:24:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:24:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:24:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:24:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:24:00,361 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:25:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:25:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:25:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:25:00,268 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:25:00,434 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:26:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:26:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:26:00,361 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:26:00,361 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:26:00,462 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:27:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:27:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:27:00,331 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:27:00,331 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:27:00,499 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:28:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:28:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:28:00,261 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:28:00,261 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:28:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:29:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:29:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:29:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:29:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:29:00,425 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:30:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:30:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:30:00,341 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:30:00,342 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:30:00,420 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:31:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:31:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:31:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:31:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:31:00,427 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:32:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:32:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:32:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:32:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:32:00,524 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:33:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:33:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:33:00,331 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:33:00,331 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:33:00,443 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:34:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:34:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:34:00,264 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:34:00,264 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:34:00,360 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:35:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:35:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:35:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:35:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:35:00,514 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:36:00,568 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:36:00,569 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:36:00,655 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:36:00,655 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:36:00,827 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:37:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:37:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:37:00,261 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:37:00,262 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:37:00,350 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:38:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:38:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:38:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:38:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:38:00,494 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:39:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:39:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:39:00,252 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:39:00,252 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:39:00,421 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:40:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:40:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:40:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:40:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:40:00,444 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:41:00,566 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:41:00,567 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:41:00,663 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:41:00,663 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:41:00,751 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:42:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:42:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:42:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:42:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:42:00,442 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:43:00,161 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:43:00,161 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:43:00,273 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:43:00,273 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:43:00,444 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:44:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:44:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:44:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:44:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:44:00,427 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:45:00,566 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:45:00,566 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:45:00,748 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:45:00,749 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:45:00,841 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:46:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:46:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:46:00,351 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:46:00,352 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:46:00,439 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:47:00,167 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:47:00,168 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:47:00,254 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:47:00,255 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:47:00,432 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:48:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:48:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:48:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:48:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:48:00,424 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:49:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:49:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:49:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:49:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:49:00,500 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:50:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:50:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:50:00,278 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:50:00,278 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:50:00,455 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:51:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:51:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:51:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:51:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:51:00,430 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:52:00,169 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:52:00,169 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:52:00,403 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:52:00,403 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:52:00,502 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:53:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:53:00,167 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:53:00,335 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:53:00,335 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:53:00,426 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:54:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:54:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:54:00,279 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:54:00,279 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:54:00,463 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:55:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:55:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:55:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:55:00,346 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:55:00,435 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:56:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:56:00,162 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:56:00,250 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:56:00,250 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:56:00,343 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:57:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:57:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:57:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:57:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:57:00,445 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:58:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:58:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:58:00,369 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:58:00,369 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:58:00,475 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 12:59:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 12:59:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 12:59:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 12:59:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 12:59:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:00:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:00:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:00:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:00:00,345 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:00:00,454 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:01:00,565 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:01:00,566 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:01:00,664 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:01:00,664 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:01:00,836 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:02:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:02:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:02:00,336 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:02:00,336 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:02:00,506 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:03:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:03:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:03:00,329 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:03:00,329 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:03:00,497 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:04:00,169 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:04:00,169 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:04:00,274 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:04:00,274 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:04:00,371 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:05:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:05:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:05:00,362 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:05:00,362 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:05:00,813 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:06:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:06:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:06:00,343 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:06:00,343 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:06:00,438 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:07:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:07:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:07:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:07:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:07:00,372 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:08:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:08:00,162 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:08:00,327 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:08:00,328 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:08:00,494 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:09:00,194 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:09:00,195 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:09:00,280 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:09:00,280 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:09:00,369 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:10:00,793 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:10:00,793 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:10:00,890 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:10:00,890 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:10:01,091 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:11:00,495 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:11:00,495 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:11:00,659 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:11:00,659 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:11:00,826 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:12:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:12:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:12:00,256 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:12:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:12:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:13:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:13:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:13:00,341 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:13:00,341 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:13:00,428 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:14:00,241 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:14:00,241 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:14:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:14:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:14:00,437 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:15:00,884 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:15:00,884 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:15:00,976 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:15:00,976 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:15:01,169 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:16:00,865 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:16:00,865 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:16:00,963 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:16:00,963 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:16:01,054 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:17:01,428 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:17:01,429 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:17:01,542 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:17:01,542 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:17:01,640 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:18:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:18:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:18:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:18:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:18:00,426 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:19:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:19:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:19:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:19:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:19:00,347 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:20:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:20:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:20:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:20:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:20:00,371 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:21:11,132 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:21:11,133 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:21:11,310 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:21:11,311 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:21:11,482 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:22:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:22:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:22:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:22:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:22:00,436 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:23:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:23:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:23:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:23:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:23:00,441 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:24:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:24:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:24:00,261 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:24:00,261 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:24:00,367 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:25:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:25:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:25:00,264 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:25:00,264 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:25:00,439 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:26:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:26:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:26:00,269 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:26:00,270 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:26:00,438 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:27:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:27:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:27:00,335 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:27:00,335 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:27:00,426 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:28:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:28:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:28:00,330 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:28:00,330 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:28:00,430 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:29:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:29:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:29:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:29:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:29:00,431 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:30:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:30:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:30:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:30:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:30:00,461 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:31:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:31:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:31:00,262 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:31:00,262 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:31:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:32:03,094 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:32:03,094 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:32:03,204 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:32:03,204 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:32:03,381 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:33:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:33:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:33:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:33:00,340 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:33:00,508 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:34:16,020 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:34:16,020 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:34:16,197 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:34:16,197 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:34:16,288 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:35:14,386 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:35:14,387 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:35:14,569 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:35:14,569 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:35:14,745 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:36:02,131 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:36:02,131 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:36:02,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:36:02,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:36:02,370 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:37:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:37:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:37:00,259 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:37:00,259 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:37:00,434 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:38:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:38:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:38:00,344 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:38:00,344 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:38:00,507 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:39:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:39:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:39:00,247 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:39:00,248 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:39:00,347 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:40:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:40:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:40:00,268 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:40:00,268 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:40:00,362 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:41:01,520 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:41:01,520 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:41:01,624 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:41:01,624 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:41:01,819 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:42:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:42:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:42:00,429 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:42:00,429 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:42:00,608 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:43:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:43:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:43:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:43:00,272 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:43:00,371 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:44:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:44:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:44:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:44:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:44:00,355 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:45:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:45:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:45:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:45:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:45:00,454 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:46:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:46:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:46:00,280 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:46:00,281 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:46:00,376 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:47:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:47:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:47:00,274 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:47:00,274 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:47:00,435 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:48:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:48:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:48:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:48:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:48:00,358 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:49:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:49:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:49:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:49:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:49:00,508 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:50:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:50:00,167 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:50:00,278 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:50:00,278 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:50:00,450 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:51:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:51:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:51:00,256 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:51:00,257 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:51:00,365 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:52:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:52:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:52:00,276 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:52:00,277 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:52:00,464 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:53:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:53:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:53:00,269 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:53:00,270 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:53:00,364 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:54:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:54:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:54:00,346 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:54:00,347 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:54:00,434 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:55:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:55:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:55:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:55:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:55:00,442 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:56:00,220 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:56:00,221 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:56:00,391 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:56:00,391 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:56:00,492 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:57:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:57:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:57:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:57:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:57:00,440 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:58:00,918 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:58:00,919 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:58:01,037 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:58:01,037 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:58:01,149 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 13:59:00,895 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 13:59:00,895 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 13:59:01,085 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 13:59:01,085 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 13:59:01,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:00:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:00:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:00:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:00:00,265 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:00:00,445 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:01:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:01:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:01:00,352 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:01:00,352 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:01:00,451 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:02:00,168 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:02:00,169 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:02:00,294 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:02:00,294 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:02:00,466 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:03:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:03:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:03:00,336 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:03:00,336 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:03:00,512 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:04:00,167 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:04:00,167 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:04:00,357 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:04:00,357 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:04:00,463 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:05:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:05:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:05:00,375 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:05:00,375 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:05:00,467 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:06:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:06:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:06:00,332 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:06:00,332 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:06:00,503 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:07:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:07:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:07:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:07:00,267 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:07:00,445 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:08:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:08:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:08:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:08:00,339 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:08:00,434 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:09:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:09:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:09:00,358 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:09:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:09:00,463 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:10:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:10:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:10:00,350 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:10:00,350 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:10:00,455 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:11:00,166 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:11:00,166 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:11:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:11:00,258 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:11:00,447 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:12:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:12:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:12:00,282 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:12:00,283 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:12:00,447 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:13:00,170 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:13:00,171 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:13:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:13:00,266 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:13:00,368 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:14:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:14:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:14:00,343 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:14:00,343 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:14:00,510 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:15:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:15:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:15:00,269 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:15:00,270 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:15:00,364 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:16:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:16:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:16:00,255 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:16:00,255 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:16:00,358 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:17:00,164 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:17:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:17:00,337 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:17:00,338 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:17:00,441 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:18:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:18:00,163 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:18:00,348 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:18:00,348 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:18:00,442 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:19:00,163 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:19:00,164 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:19:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:19:00,263 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:19:00,364 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:20:00,369 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:20:00,369 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:20:00,475 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:20:00,475 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:20:00,581 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:20:26,009 INFO [com.kevin.fish.FishDnspodApplicationTests] - Starting FishDnspodApplicationTests using Java 1.8.0_171 on LAPTOP-PJ83H98E with PID 5968 (started by kevin in D:\idea_workspace\fish-dnspod)
+2022-01-25 14:20:26,015 INFO [com.kevin.fish.FishDnspodApplicationTests] - No active profile set, falling back to default profiles: default
+2022-01-25 14:20:27,697 INFO [com.kevin.fish.utils.PropertyUtils] - �����ļ�[application.properties],װ�سɹ�~
+2022-01-25 14:20:29,487 INFO [com.kevin.fish.FishDnspodApplicationTests] - Started FishDnspodApplicationTests in 4.034 seconds (JVM running for 6.163)
+2022-01-25 14:21:00,165 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:21:00,165 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:21:00,365 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:21:00,366 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:21:00,463 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:22:00,187 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:22:00,188 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:22:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:22:00,359 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:22:00,450 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip
+2022-01-25 14:23:00,162 INFO [com.kevin.fish.job.DnsRefreshJob] - 当前公网IP为：117.63.122.185
+2022-01-25 14:23:00,162 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:work
+2022-01-25 14:23:00,353 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:work with same IP, skip
+2022-01-25 14:23:00,354 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - check sub-domain:kevin
+2022-01-25 14:23:00,534 INFO [com.kevin.fish.dns.dnspod.DnsPodClient] - sub-domain:kevin with same IP, skip

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="log_home" value="./logs/" />
+    <property name="appname" value="fish-dnspod" />
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d %p [%c] - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="logfile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${log_home}/${appname}.log</File>
+		<Append>true</Append>
+		<encoder>
+			<pattern>%d %p [%c] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${log_home}/${appname}.%i.log</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>20</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>10MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<appender name="error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${log_home}/${appname}.error.log</File>
+		<Append>true</Append>
+		<encoder>
+			<pattern>%d %p [%c] - %m%n</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${log_home}/${appname}.error.%i.log
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>10</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>5MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<logger name="org.quartz.core" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.jdbc.core.JdbcTemplate" level="DEBUG" />
+	<logger name="org.springframework.jdbc.core.StatementCreatorUtils" level="TRACE" />
+	<logger name="org.apache.commons" level="WARN" />
+	<logger name="org.apache.http" level="WARN" />
+
+
+	<root level="INFO">
+		<appender-ref ref="console" />
+		<appender-ref ref="logfile" />
+		<appender-ref ref="error" />
+	</root>
+
+</configuration>
