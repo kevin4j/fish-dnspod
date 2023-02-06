@@ -30,6 +30,8 @@ public class DnsRefreshJob {
     @PostConstruct
     public void loadConfig(){
         DnsCommonClient.loadConfig();
+
+        refreshIp();
     }
 
     @Scheduled(cron = "0 0/1 * * *  ?")

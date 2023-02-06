@@ -4,11 +4,16 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.YamlPropertiesFactoryBean;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.core.io.support.ResourcePropertiesPersister;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -36,7 +41,24 @@ public class PropertyUtils {
 
 				Resource resource = new ClassPathResource(propertyFileName);
 				if(propertyFileName.endsWith(".properties")){
-					p = PropertiesLoaderUtils.loadProperties(resource);
+					String confPath = System.getProperty("user.dir");
+					confPath = confPath + File.separator + propertyFileName;
+					File file = new File(confPath);
+
+					if (file.exists()) {
+						p = new Properties();
+						InputStream in = null;
+						try{
+							in = new FileInputStream(file);
+							ResourcePropertiesPersister.INSTANCE.load(p, in);
+						}finally {
+							if(in != null){
+								in.close();
+							}
+						}
+					}else{
+						p = PropertiesLoaderUtils.loadProperties(resource);
+					}
 				}else if(propertyFileName.endsWith(".yml")){
 					YamlPropertiesFactoryBean yamlFactory = new YamlPropertiesFactoryBean();
 					yamlFactory.setResources(resource);
