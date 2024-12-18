@@ -44,4 +44,9 @@ public class Record {
      */
     private String mx;
 
+    /**
+     * 记录状态，"enable"
+     */
+    private String status;
+
 }

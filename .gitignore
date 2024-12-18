@@ -33,3 +33,5 @@ build/
 /src/main/resources/application-local.properties
 /logs/
 /logs
+/src/main/resources/application-dnspod.properties
+/src/main/resources/application-tencentcloud.properties

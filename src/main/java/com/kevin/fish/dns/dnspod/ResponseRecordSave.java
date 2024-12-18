@@ -7,7 +7,7 @@ import lombok.Data;
  * @create 2022/1/24 12:11
  */
 @Data
-public class ResponseRecordModify extends Response{
+public class ResponseRecordSave extends Response{
 
     private Record record;
 }

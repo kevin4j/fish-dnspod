@@ -8,5 +8,12 @@ public enum DnsProviderEnum {
     /**
      * 腾讯DNSPOD
      */
-    DNSPOD;
+    DNSPOD,
+
+    /**
+     * 腾讯云
+     */
+    TENCENT_CLOUD,
+    ;
+
 }

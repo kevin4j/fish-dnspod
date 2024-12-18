@@ -1,13 +1,13 @@
 package com.kevin.fish.dns.dnspod;
 
-import com.kevin.fish.core.exception.ServiceException;
 import com.kevin.fish.dns.DnsCommonClient;
+import com.kevin.fish.dns.DnsCommonConfig;
 import com.kevin.fish.utils.HttpClientUtils;
 import com.kevin.fish.utils.JSONUtilsEx;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.CollectionUtils;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,7 +17,8 @@ import java.util.Map;
  * @author kevin
  * @create 2022/1/24 11:23
  */
-public class DnsPodClient extends DnsCommonClient {
+@Component
+public class DnsPodClient extends DnsCommonClient<Record> {
 
     private static Logger logger = LoggerFactory.getLogger(DnsPodClient.class);
 
@@ -27,47 +28,24 @@ public class DnsPodClient extends DnsCommonClient {
 
     public final static String API_RECORD_MODIFY = "/Record.Modify";
 
+    public final static String API_RECORD_Create = "/Record.Create";
 
-    public static void refreshDns(String currentIp){
-        if(StringUtils.isBlank(LOGIN_TOKEN)){
-            loadConfig();
-        }
-
-        if(StringUtils.isNotBlank(SUB_DOMAIN)){
-            String[] subDomainArr = StringUtils.split(SUB_DOMAIN, ",");
-            for(String subDomain : subDomainArr){
-                logger.info("check sub-domain:"+subDomain);
-                Record record = getRecordBySubDomain(subDomain);
-                if(record == null){
-                    logger.error("sub-domain:"+subDomain + " not exist");
-                    continue;
-                }
-                if(!StringUtils.equals(record.getValue(), currentIp)){
-                    logger.info(String.format("update sub-domain %s, old IP ( %s ), current IP ( %s )", subDomain, record.getValue(), currentIp));
-                    record.setValue(currentIp);
-                    modifyRecord(record);
-                }else{
-                    logger.info("sub-domain:"+subDomain + " with same IP, skip");
-                }
-            }
-        }
-    }
-
-    public static Map<String, String> getDefaultParams(){
+    public Map<String, String> getDefaultParams(){
         Map<String, String> params = new HashMap<>();
-        params.put("login_token", LOGIN_TOKEN);
+        params.put("login_token", DnsCommonConfig.LOGIN_TOKEN);
         params.put("format", "json");
-        params.put("domain", DOMAIN);
+        params.put("domain", DnsCommonConfig.DOMAIN);
 
         return params;
     }
 
-    public static Record getRecordBySubDomain(String subDomain){
-        List<Record> recordList = getRecordList(subDomain);
-        return CollectionUtils.isEmpty(recordList) ? null : recordList.get(0);
+    @Override
+    public String getOldValue(Record record) {
+        return record.getValue();
     }
 
-    public static List<Record> getRecordList(String subDomain){
+    @Override
+    public List<Record> getRecordList(String subDomain){
         String url = String.format("%s%s", BASE_URL, API_RECORD_LIST);
         Map<String, String> params = getDefaultParams();
         params.put("record_type", "A");
@@ -75,17 +53,36 @@ public class DnsPodClient extends DnsCommonClient {
             params.put("sub_domain", subDomain);
         }
         String result = HttpClientUtils.post(url, params);
-        logger.debug("查询record返回结果："+result);
+        logger.debug("查询record返回结果：{}", result);
         ResponseRecordList response = JSONUtilsEx.deserialize(result, ResponseRecordList.class);
         if(StringUtils.equals(response.getStatus().getCode(), "1")){
             return response.getRecords();
         }else{
-            logger.error(String.format("url: %s, params:%s, response: %s", url, JSONUtilsEx.serialize(params), result));
-            throw new ServiceException(String.format("查询记录列表出错，code：%s， msg：%s", response.getStatus().getCode(), response.getStatus().getMessage()));
+            logger.error("查询record, url: {}, params:{}, response: {}, message:{}", url, JSONUtilsEx.serialize(params), result, response.getStatus().getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public void addRecord(String subDomain, String ip){
+        String url = String.format("%s%s", BASE_URL, API_RECORD_Create);
+        Map<String, String> params = getDefaultParams();
+        params.put("domain", DnsCommonConfig.DOMAIN);
+        params.put("sub_domain", subDomain);
+        params.put("record_type", "A");
+        params.put("record_line", "\u9ed8\u8ba4");
+        params.put("record_line_id", "0");
+        params.put("value", ip);
+        String result = HttpClientUtils.post(url, params);
+        logger.debug("添加record返回结果：{}", result);
+        ResponseRecordSave response = JSONUtilsEx.deserialize(result, ResponseRecordSave.class);
+        if(!StringUtils.equals(response.getStatus().getCode(), "1")){
+            logger.error("添加record, url: {}, params:{}, response: {}, message:{}", url, JSONUtilsEx.serialize(params), result, response.getStatus().getMessage());
         }
     }
 
-    public static void modifyRecord(Record record){
+    @Override
+    public void modifyRecord(Record record, String newValue){
         String url = String.format("%s%s", BASE_URL, API_RECORD_MODIFY);
         Map<String, String> params = getDefaultParams();
         params.put("record_id", record.getId());
@@ -93,18 +90,13 @@ public class DnsPodClient extends DnsCommonClient {
         params.put("record_type", record.getType());
         params.put("record_line", record.getLine());
         params.put("record_line_id", record.getLine_id());
-        params.put("value", record.getValue());
+        params.put("value", newValue);
         params.put("mx", record.getMx());
         String result = HttpClientUtils.post(url, params);
-        logger.debug("修改record返回结果："+result);
-        ResponseRecordModify response = JSONUtilsEx.deserialize(result, ResponseRecordModify.class);
+        logger.debug("修改record返回结果：{}", result);
+        ResponseRecordSave response = JSONUtilsEx.deserialize(result, ResponseRecordSave.class);
         if(!StringUtils.equals(response.getStatus().getCode(), "1")){
-            logger.error(String.format("url: %s, params:%s, response: %s", url, JSONUtilsEx.serialize(params), result));
-            throw new ServiceException(String.format("更新记录出错，code：%s， msg：%s", response.getStatus().getCode(), response.getStatus().getMessage()));
+            logger.error("更新record, url: {}, params:{}, response: {}, message:{}", url, JSONUtilsEx.serialize(params), result, response.getStatus().getMessage());
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }

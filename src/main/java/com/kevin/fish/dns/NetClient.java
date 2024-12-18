@@ -72,14 +72,14 @@ public class NetClient {
     }
 
     public static String getCurrentHostIp2(){
-        String htmlResult = HttpClientUtils.get("http://23.80.5.90/ip.php");
+        String htmlResult = HttpClientUtils.get(ipUrlSub.get("url"));
         Document document =Jsoup.parse(htmlResult);
         String body = document.body().text();
         return StringUtils.split(body, " ")[0];
     }
 
     public static String getCurrentHostIp3(){
-        String jsonResult = HttpClientUtils.get("https://www.ip.cn/api/index?ip=&type=0");
+        String jsonResult = HttpClientUtils.get(ipUrlMain.get("url"));
         Map<String, Object> resultMap = JSONUtilsEx.deserialize(jsonResult, Map.class);
         return (String) resultMap.get("ip");
     }
