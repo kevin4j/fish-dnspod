@@ -34,7 +34,7 @@ public class DnsRefreshJob {
         refreshIp();
     }
 
-    @Scheduled(cron = "0 0/2 * * *  ?")
+    @Scheduled(cron = "0 0/5 * * *  ?")
     public void refreshIp(){
         String currentIp = "";
         String result = "success";
